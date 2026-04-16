@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Planificador de Comidas Semanales</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>🍽️ Planificador de Comidas Semanales</h1>
+      <p>Organiza desayuno, comida y cena para toda la semana.</p>
+    </header>
+
+    <main class="container">
+      <section class="card controls">
+        <h2>Agregar comida</h2>
+        <form id="mealForm">
+          <div class="grid-2">
+            <label>
+              Día
+              <select id="day" required>
+                <option value="">Selecciona un día</option>
+                <option>Lunes</option>
+                <option>Martes</option>
+                <option>Miércoles</option>
+                <option>Jueves</option>
+                <option>Viernes</option>
+                <option>Sábado</option>
+                <option>Domingo</option>
+              </select>
+            </label>
+            <label>
+              Tipo
+              <select id="type" required>
+                <option value="">Selecciona</option>
+                <option>Desayuno</option>
+                <option>Comida</option>
+                <option>Cena</option>
+                <option>Snack</option>
+              </select>
+            </label>
+          </div>
+
+          <label>
+            Platillo
+            <input id="name" type="text" placeholder="Ej. Tacos de pollo" required />
+          </label>
+
+          <label>
+            Ingredientes (separados por coma)
+            <input id="ingredients" type="text" placeholder="Ej. pollo, tortilla, cebolla" />
+          </label>
+
+          <div class="form-actions">
+            <button type="submit">Guardar comida</button>
+            <button type="button" id="clearWeek" class="secondary">Limpiar semana</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="card planner">
+        <div class="planner-header">
+          <h2>Mi semana</h2>
+          <button id="exportBtn" class="secondary">Exportar JSON</button>
+        </div>
+        <div id="weekBoard" class="week-board"></div>
+      </section>
+
+      <section class="card shopping">
+        <h2>Lista de compras automática</h2>
+        <ul id="shoppingList"></ul>
+      </section>
+    </main>
+
+    <template id="dayColumnTemplate">
+      <article class="day-column">
+        <h3 class="day-title"></h3>
+        <ul class="meal-list"></ul>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
