@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Planificador de Comidas</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <h1>🍽️ Planificador de Comidas</h1>
+      <p>Organiza tus recetas por semana y genera tu lista de compras automáticamente.</p>
+    </header>
+
+    <main class="layout">
+      <section class="card">
+        <h2>1) Recetas</h2>
+        <form id="recipe-form" class="stack">
+          <label>
+            Nombre de receta
+            <input id="recipe-name" type="text" placeholder="Ej: Pasta integral" required />
+          </label>
+          <label>
+            Ingredientes (separados por coma)
+            <textarea id="recipe-ingredients" rows="3" placeholder="tomate, pasta, ajo, albahaca" required></textarea>
+          </label>
+          <button type="submit">Guardar receta</button>
+        </form>
+
+        <div class="subsection">
+          <h3>Recetas guardadas</h3>
+          <ul id="recipe-list" class="list"></ul>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>2) Plan semanal</h2>
+        <div id="weekly-grid" class="weekly-grid"></div>
+      </section>
+
+      <section class="card">
+        <h2>3) Lista de compras</h2>
+        <p class="muted">Se actualiza según las recetas planificadas.</p>
+        <ul id="shopping-list" class="list"></ul>
+        <div class="actions-row">
+          <button id="clear-plan" class="secondary">Limpiar planificación</button>
+          <button id="clear-all" class="danger">Borrar todo</button>
+        </div>
+      </section>
+    </main>
+
+    <template id="day-template">
+      <article class="day-card">
+        <h3 class="day-title"></h3>
+        <label>
+          Desayuno
+          <select data-meal="desayuno"></select>
+        </label>
+        <label>
+          Almuerzo
+          <select data-meal="almuerzo"></select>
+        </label>
+        <label>
+          Cena
+          <select data-meal="cena"></select>
+        </label>
+      </article>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
