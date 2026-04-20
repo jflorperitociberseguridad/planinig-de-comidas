@@ -1,0 +1,10 @@
+{
+  "name": "planinig-de-comidas",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Planificador de comidas semanales en HTML/CSS/JS",
+  "scripts": {
+    "start": "bash ./start-local.sh",
+    "check": "node --check app.js"
+  }
+}
