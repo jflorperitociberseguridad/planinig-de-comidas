@@ -11,7 +11,7 @@ Aplicación web (HTML/CSS/JS puro) para gestionar el planning de comidas de la s
 - Exportación del plan semanal en formato JSON.
 - Limpieza completa del plan semanal.
 
-## Ejecutar en local
+## Ver la página en el navegador (local)
 
 ### Opción rápida (sin instalar nada adicional)
 
@@ -19,15 +19,22 @@ Aplicación web (HTML/CSS/JS puro) para gestionar el planning de comidas de la s
 ./start-local.sh
 ```
 
-Abre: `http://localhost:8080`
+Luego abre en tu navegador:
 
-También puedes elegir puerto:
+- `http://localhost:8080`
+
+### Si estás en VM/WSL/Docker/servidor remoto
+
+Inicia escuchando en todas las interfaces:
 
 ```bash
-./start-local.sh 3000
+./start-local.sh 0.0.0.0 8080
 ```
 
-Abre: `http://localhost:3000`
+Después abre desde tu máquina host:
+
+- `http://localhost:8080` (si hay reenvío de puertos)
+- o la URL de red que imprime el script en consola.
 
 ### Opción con npm
 
