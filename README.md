@@ -1,50 +1,37 @@
-# Planificador de comidas semanales
+# Planificador de comidas semanales + IA + imágenes
 
-Aplicación web (HTML/CSS/JS puro) para gestionar el planning de comidas de la semana en local.
+Aplicación web (HTML/CSS/JS puro) para gestionar el planning semanal, generar propuestas con inteligencia artificial y crear imágenes de platillos.
 
 ## Funcionalidades
 
 - Alta de comidas por día y tipo (desayuno, comida, cena o snack).
-- Edición rápida mediante borrado por cada comida.
-- Persistencia de datos en `localStorage`.
-- Lista de compras generada automáticamente a partir de ingredientes.
-- Exportación del plan semanal en formato JSON.
-- Limpieza completa del plan semanal.
+- Persistencia en `localStorage`.
+- Lista de compras automática.
+- Exportación del plan semanal en JSON.
+- Generación de **plan semanal con IA** a partir de un objetivo.
+- Generación de **imágenes IA** por cada comida.
 
 ## Ver la página en el navegador (local)
-
-### Opción rápida (sin instalar nada adicional)
 
 ```bash
 ./start-local.sh
 ```
 
-Luego abre en tu navegador:
+Abrir: `http://localhost:8080`
 
-- `http://localhost:8080`
+## Configurar IA
 
-### Si estás en VM/WSL/Docker/servidor remoto
+1. En la tarjeta **Asistente IA**, pega tu API Key.
+2. Opcional: cambia modelo de texto e imagen.
+3. Escribe tu objetivo (por ejemplo: "alto en proteína y económico").
+4. Pulsa **Generar plan con IA**.
+5. En cada comida, pulsa **Generar imagen IA**.
 
-Inicia escuchando en todas las interfaces:
-
-```bash
-./start-local.sh 0.0.0.0 8080
-```
-
-Después abre desde tu máquina host:
-
-- `http://localhost:8080` (si hay reenvío de puertos)
-- o la URL de red que imprime el script en consola.
-
-### Opción con npm
-
-```bash
-npm start
-```
+> Nota: La API key se guarda en `localStorage` del navegador para uso local.
 
 ## Estructura
 
 - `index.html`: interfaz principal.
 - `styles.css`: estilos responsive.
-- `app.js`: lógica de planificación, persistencia y lista de compras.
+- `app.js`: lógica de planificación + IA + imágenes.
 - `start-local.sh`: arranque local con servidor HTTP.

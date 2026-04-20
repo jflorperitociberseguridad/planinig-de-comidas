@@ -8,8 +8,8 @@
   </head>
   <body>
     <header class="app-header">
-      <h1>🍽️ Planificador de Comidas Semanales</h1>
-      <p>Organiza desayuno, comida y cena para toda la semana.</p>
+      <h1>🍽️ Planificador de Comidas Semanales + IA</h1>
+      <p>Organiza tu semana, genera sugerencias con IA y crea imágenes de tus platillos.</p>
     </header>
 
     <main class="container">
@@ -57,6 +57,43 @@
             <button type="button" id="clearWeek" class="secondary">Limpiar semana</button>
           </div>
         </form>
+      </section>
+
+      <section class="card ai-panel">
+        <h2>Asistente IA</h2>
+        <p class="muted">Configura tu API Key (local) para generar menú semanal e imágenes.</p>
+        <div class="grid-2">
+          <label>
+            API Key
+            <input id="apiKey" type="password" placeholder="sk-..." />
+          </label>
+          <label>
+            Modelo texto
+            <input id="textModel" type="text" value="gpt-4.1-mini" />
+          </label>
+        </div>
+        <div class="grid-2">
+          <label>
+            Modelo imagen
+            <input id="imageModel" type="text" value="gpt-image-1" />
+          </label>
+          <label>
+            Tamaño imagen
+            <select id="imageSize">
+              <option>1024x1024</option>
+              <option>1536x1024</option>
+              <option>1024x1536</option>
+            </select>
+          </label>
+        </div>
+        <label>
+          Objetivo del menú semanal
+          <textarea id="goal" rows="3" placeholder="Ej. Menú alto en proteína, económico y fácil para 2 personas"></textarea>
+        </label>
+        <div class="form-actions">
+          <button type="button" id="generatePlanBtn">Generar plan con IA</button>
+          <span id="aiStatus" class="muted"></span>
+        </div>
       </section>
 
       <section class="card planner">
